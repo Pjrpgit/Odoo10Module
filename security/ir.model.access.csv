@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+coordinador_alumno,coordinador alumno,model_fct_barajas_alumno,practicas_coordinador,1,1,1,1
+coordinador_empresa,coordinador empresa,model_fct_barajas_empresa,practicas_coordinador,1,1,1,1
+profesor_alumno,profesor alumno,model_fct_barajas_alumno,practicas_profesor,1,0,0,0
+profesor_empresa,profesor empresa,model_fct_barajas_empresa,practicas_profesor,1,0,0,0

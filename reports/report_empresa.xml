@@ -1,0 +1,118 @@
+<odoo>
+  <data>
+    <report
+      id="fct_barajas.report_empresa"
+      model="fct_barajas.empresa"
+      string="Informe Empresa"
+      name="fct_barajas.report_empresa_view"
+      file="fct_barajas.report_empresa_view"
+      report_type="qweb-pdf"/>
+
+      <template id="fct_barajas.report_empresa_view">
+        <t t-call="report.html_container">
+          <t t-foreach="docs" t-as="empresa">
+            <t t-call="report.external_layout">
+              <div class="page">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <h2 t-field="empresa.name"/>
+                <div>
+                  <strong>Email</strong>
+                  <span t-field="empresa.email"/>
+                </div>
+                <div>
+                  <strong>Contacto</strong>
+                  <span t-field="empresa.contacto"/>
+                </div>
+                <div>
+                  <strong>Direccion</strong>
+                  <span t-field="empresa.direccion"/>
+                </div>
+                <div>
+                  <strong>Telefono</strong>
+                  <span t-field="empresa.telefono"/>
+                </div>
+                <div>
+                  <strong>Alumnos</strong>
+                  <div>
+                    <table style="
+                                  border-collapse: collapse;
+                                  ">
+                      <thead>
+                        <tr>
+                          <th style="border-bottom: 1px solid #b7bbc4; border-color: lighten(#2e5299, 20%); text-align:center;">
+                            <strong>Nombre</strong>
+                          </th>
+                          <th style="border-bottom: 1px solid #b7bbc4; border-color: lighten(#2e5299, 20%); text-align:center;">
+                            <strong>Apellido</strong>
+                          </th>
+                          <th style="border-bottom: 1px solid #b7bbc4; border-color: lighten(#2e5299, 20%); text-align:center; padding:2px">
+                            <strong>Fecha Nac</strong>
+                          </th>
+                          <th style="border-bottom: 1px solid #b7bbc4; border-color: lighten(#2e5299, 20%); text-align:center; padding:4px;">
+                            <strong>Ciclo</strong>
+                          </th>
+                          <th style="border-bottom: 1px solid #b7bbc4; border-color: lighten(#2e5299, 20%); text-align:center; padding:2px">
+                            <strong>Curso</strong>
+                          </th>
+                          <th style="border-bottom: 1px solid #b7bbc4; border-color: lighten(#2e5299, 20%); text-align:center; padding:3px">
+                            <strong>Periodo</strong>
+                          </th>
+                          <th style="border-bottom: 1px solid #b7bbc4; border-color: lighten(#2e5299, 20%); text-align:center;">
+                            <strong>Media</strong>
+                          </th>
+                          <th style="border-bottom: 1px solid #b7bbc4; border-color: lighten(#2e5299, 20%); text-align:center;">
+                            <strong>Nota</strong>
+                          </th>
+                          <th style="border-bottom: 1px solid #b7bbc4; border-color: lighten(#2e5299, 20%); text-align:center; padding-left:3px">
+                            <strong>Telefono</strong>
+                          </th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: #D8F0DA
+            background: transparent">
+                  <t t-foreach="empresa.alumnos" t-as="alumno">
+                        <tr>
+                          <td style="padding-left:3px;">
+                            <span style="padding-right:1px;" t-field="alumno.name"/>
+                          </td>
+                          <td>
+                            <span style="padding-right:1px;" t-field="alumno.apellido"/>
+                          </td>
+                          <td style="text-align:center;">
+                            <span style="padding-right:1px;" t-field="alumno.fecha_nacimiento"/>
+                          </td>
+                          <td>
+                            <span style="padding-right:1px; padding-left:3px;" t-field="alumno.ciclo"/>
+                          </td>
+                          <td>
+                            <span style="padding-right:1px;" t-field="alumno.curso"/>
+                          </td>
+                          <td style="text-align:center;">
+                            <span style="padding-right:1px; text-align:center;" t-field="alumno.periodo"/>
+                          </td>
+                          <td style="text-align:center;">
+                            <span style="padding-right:1px;" t-field="alumno.nota_media"/>
+                          </td>
+                          <td>
+                            <span style="padding-right:1px;" t-field="alumno.nota"/>
+                          </td>
+                          <td>
+                            <span style="padding-right:3px; padding-left:5px" t-field="alumno.telefono"/>
+                          </td>
+                        </tr>
+                      </t>
+                      </tbody>
+                      </table>
+                    </div>
+                </div>
+              </div>
+            </t>
+          </t>
+        </t>
+      </template>
+    </data>
+</odoo>

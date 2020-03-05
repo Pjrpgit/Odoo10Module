@@ -1,0 +1,11 @@
+<odoo>
+  <data>
+    <record model="res.groups" id="practicas_coordinador">
+      <field name="name">Coordinador FCT</field>
+   </record>
+
+   <record id="practicas_profesor" model="res.groups">
+     <field name="name">Profesor FCT</field>
+  </record>
+ </data>
+</odoo>
